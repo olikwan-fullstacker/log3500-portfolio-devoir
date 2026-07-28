@@ -38,7 +38,7 @@ const teamMembers = [
     githubUsername: 'Guivens509',
     photo: casimirPhoto,
     photoAlt: 'Portrait provisoire pour la fiche de Casimir GUIVENS',
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
     id: 'marc-laurin',

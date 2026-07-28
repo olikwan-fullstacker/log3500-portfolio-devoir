@@ -1,7 +1,7 @@
-import casimirPhoto from '../assets/images/team/casimir-guivens.png';
-import endrickPhoto from '../assets/images/team/endrick-tessier.png';
-import marcPhoto from '../assets/images/team/marc-laurin.png';
-import nikchelinePhoto from '../assets/images/team/nikcheline-fanfan.png';
+import casimirPhoto from '../assets/images/team/casimir-guivens.webp';
+import endrickPhoto from '../assets/images/team/endrick-tessier.webp';
+import marcPhoto from '../assets/images/team/marc-laurin.webp';
+import nikchelinePhoto from '../assets/images/team/nikcheline-fanfan.webp';
 
 const teamMembers = [
   {

@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, ownerName }) {
   const {
     id,
     title,
     category,
+    scope,
     shortDescription,
     technologies,
     status,
@@ -42,6 +43,12 @@ function ProjectCard({ project }) {
             </span>
           )}
         </div>
+
+          <p className="project-owner">
+  {scope === 'collective'
+    ? 'Projet collectif'
+    : `Projet de ${ownerName}`}
+</p>
 
         <h2 className="project-title">{title}</h2>
 

@@ -14,7 +14,7 @@ const translations = {
       light: 'Clair',
     },
     home: {
-      eyebrow: 'Équipe LOG3500',
+      eyebrow: 'Équipe de Pros',
       title: 'Nous concevons des expériences Web modernes.',
       description:
         'Découvrez notre équipe, nos compétences et les projets réalisés dans le cadre du cours de conception et programmation de sites Web.',
@@ -38,7 +38,7 @@ const translations = {
       light: 'Light',
     },
     home: {
-      eyebrow: 'LOG3500 Team',
+      eyebrow: 'Super Pro Team',
       title: 'We design modern Web experiences.',
       description:
         'Discover our team, our skills and the projects completed as part of our Web design and programming course.',
@@ -62,7 +62,7 @@ const translations = {
       light: 'Klè',
     },
     home: {
-      eyebrow: 'Ekip LOG3500',
+      eyebrow: 'On Ekip Pro',
       title: 'Nou kreye eksperyans entènèt modèn.',
       description:
         'Dekouvri ekip nou an, konpetans nou ak pwojè nou reyalize nan kad kou konsepsyon ak pwogramasyon sit entènèt la.',

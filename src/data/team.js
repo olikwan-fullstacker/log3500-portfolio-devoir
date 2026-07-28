@@ -11,7 +11,7 @@ const teamMembers = [
     responsibility: 'Maquettage, sémantique et accessibilité',
     description:
       'Membre de l’équipe responsable de la conception visuelle, de la structure sémantique et de l’accessibilité.',
-    githubUsername: 'isteahnfanfan-ux',
+    githubUsername: 'nfanfan',
     photo: nikchelinePhoto,
     photoAlt: 'Nikcheline FANFAN',
     isPlaceholder: false,

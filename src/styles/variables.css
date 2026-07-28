@@ -64,3 +64,21 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
+
+[data-theme="dark"] {
+  --color-background: #07111f;
+  --color-surface: #111c2e;
+  --color-surface-secondary: #17243a;
+
+  --color-text: #e6edf7;
+  --color-text-muted: #a9b6c9;
+
+  --color-border: #2b3a50;
+  --color-primary-light: #172554;
+
+  --shadow-small: 0 4px 14px rgb(0 0 0 / 22%);
+  --shadow-medium: 0 14px 35px rgb(0 0 0 / 30%);
+  --shadow-large: 0 24px 60px rgb(0 0 0 / 38%);
+
+  color-scheme: dark;
+}

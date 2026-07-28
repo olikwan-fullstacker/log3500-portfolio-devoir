@@ -4,8 +4,7 @@ function Footer() {
   return (
     <footer className="site-footer">
       <p>
-        © {currentYear} Équipe LOG3500 — Portfolio professionnel collectif
-      </p>
+        © {currentYear} Équipe LOG3500 — Portfolio des Pros      </p>
     </footer>
   );
 }

@@ -34,7 +34,7 @@ function Navbar() {
         aria-label="Navigation principale"
       >
         <NavLink className="site-logo" to="/">
-          LOG3500 Portfolio
+          Développeurs Pros
         </NavLink>
 
         <div className="navbar-right">

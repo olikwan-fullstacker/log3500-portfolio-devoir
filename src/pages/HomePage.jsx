@@ -1,12 +1,28 @@
 import { Link } from 'react-router-dom';
 
+import backgroundVideo from '../assets/videos/fullstack-cover.mp4';
 import useLanguage from '../hooks/useLanguage.js';
 
 function HomePage() {
   const { translate } = useLanguage();
 
   return (
-    <section className="hero">
+    <section className="hero hero-video-section">
+      <video
+        className="hero-background-video"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+        tabIndex="-1"
+      >
+        <source src={backgroundVideo} type="video/mp4" />
+      </video>
+
+      <div className="hero-video-overlay" aria-hidden="true" />
+
       <div className="hero-content">
         <p className="hero-eyebrow">
           {translate('home.eyebrow')}
@@ -27,7 +43,7 @@ function HomePage() {
           </Link>
 
           <Link
-            className="button button-secondary"
+            className="button button-secondary hero-secondary-button"
             to="/equipe"
           >
             {translate('home.teamButton')}

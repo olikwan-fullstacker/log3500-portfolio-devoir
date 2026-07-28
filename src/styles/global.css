@@ -1384,3 +1384,106 @@ select:focus-visible {
     width: 100%;
   }
 }
+
+/* ================================
+   Vidéo de fond de l’accueil
+================================ */
+
+.hero-video-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  display: grid;
+  min-height: calc(100vh - var(--header-height));
+  align-items: center;
+
+  padding: clamp(2rem, 7vw, 5rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-secondary);
+  box-shadow: var(--shadow-large);
+}
+
+.hero-background-video {
+  position: absolute;
+  z-index: -3;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgb(5 15 35 / 88%) 0%,
+      rgb(5 15 35 / 72%) 45%,
+      rgb(5 15 35 / 35%) 100%
+    );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+
+  max-width: 760px;
+}
+
+.hero-video-section h1 {
+  color: #ffffff;
+  text-shadow: 0 4px 24px rgb(0 0 0 / 35%);
+}
+
+.hero-video-section .hero-description {
+  color: rgb(255 255 255 / 86%);
+  text-shadow: 0 2px 12px rgb(0 0 0 / 35%);
+}
+
+.hero-video-section .hero-eyebrow {
+  color: #bfdbfe;
+  background-color: rgb(37 99 235 / 28%);
+  backdrop-filter: blur(8px);
+}
+
+.hero-secondary-button {
+  border-color: rgb(255 255 255 / 65%);
+  color: #ffffff;
+  background-color: rgb(255 255 255 / 12%);
+  backdrop-filter: blur(8px);
+}
+
+.hero-secondary-button:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+  background-color: rgb(255 255 255 / 22%);
+}
+
+@media (max-width: 760px) {
+  .hero-video-section {
+    min-height: calc(100vh - 140px);
+    padding: var(--space-6);
+  }
+
+  .hero-video-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgb(5 15 35 / 76%) 0%,
+        rgb(5 15 35 / 90%) 100%
+      );
+  }
+
+  .hero-background-video {
+    object-position: center;
+  }
+}

@@ -13,8 +13,8 @@ const teamMembers = [
       'Membre de l’équipe responsable de la conception visuelle, de la structure sémantique et de l’accessibilité.',
     githubUsername: 'isteahnfanfan-ux',
     photo: nikchelinePhoto,
-    photoAlt: 'Portrait provisoire pour la fiche de Nikcheline FANFAN',
-    isPlaceholder: true,
+    photoAlt: 'Nikcheline FANFAN',
+    isPlaceholder: false,
   },
   {
     id: 'endrick-tessier',
@@ -25,8 +25,8 @@ const teamMembers = [
       'Membre de l’équipe responsable des composants graphiques réutilisables et de la navigation React.',
     githubUsername: 'olikwan-fullstacker',
     photo: endrickPhoto,
-    photoAlt: 'Portrait provisoire pour la fiche de Endrick TESSIER',
-    isPlaceholder: true,
+    photoAlt: 'Endrick TESSIER',
+    isPlaceholder: false,
   },
   {
     id: 'casimir-guivens',

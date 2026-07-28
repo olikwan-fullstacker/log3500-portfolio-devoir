@@ -50,7 +50,7 @@ const teamMembers = [
     githubUsername: 'Francois-M04',
     photo: marcPhoto,
     photoAlt: 'Portrait provisoire pour la fiche de Marc LAURIN',
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
 ];
 

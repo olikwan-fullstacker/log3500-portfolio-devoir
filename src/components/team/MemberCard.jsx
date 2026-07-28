@@ -1,3 +1,5 @@
+import GitHubStats from './GitHubStats.jsx';
+
 function MemberCard({ member }) {
   const {
     fullName,
@@ -45,20 +47,8 @@ function MemberCard({ member }) {
           {description}
         </p>
 
-        {githubUsername ? (
-          <a
-            className="member-link"
-            href={`https://github.com/${githubUsername}`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Voir le profil GitHub
-          </a>
-        ) : (
-          <p className="member-link-unavailable">
-            Profil GitHub à ajouter
-          </p>
-        )}
+        <GitHubStats username={githubUsername} />
+       
       </div>
     </article>
   );

@@ -1094,3 +1094,128 @@ select:focus-visible {
     display: none;
   }
 }
+
+/* ================================
+   Statistiques GitHub
+================================ */
+
+.github-stats {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.github-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+
+  margin: 0 0 var(--space-4);
+}
+
+.github-stat {
+  padding: var(--space-3);
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-surface-secondary);
+  text-align: center;
+}
+
+.github-stat dt {
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.github-stat dd {
+  margin: var(--space-1) 0 0;
+
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.github-languages {
+  margin-bottom: var(--space-4);
+}
+
+.github-languages p {
+  margin-bottom: var(--space-2);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.github-languages ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+.github-languages li {
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-pill);
+
+  color: var(--color-primary-dark);
+  background-color: var(--color-primary-light);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.github-unavailable {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.loading-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}
+
+.loading-spinner {
+  width: 1rem;
+  height: 1rem;
+
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+
+  animation: loading-spin 700ms linear infinite;
+}
+
+.error-message {
+  padding: var(--space-3);
+  border-left: 4px solid var(--color-danger);
+  border-radius: var(--radius-small);
+
+  color: var(--color-danger);
+  background-color: rgb(220 38 38 / 8%);
+
+  font-size: 0.82rem;
+}
+
+@keyframes loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 420px) {
+  .github-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

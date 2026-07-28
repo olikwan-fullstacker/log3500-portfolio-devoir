@@ -11,7 +11,7 @@ const teamMembers = [
     responsibility: 'Maquettage, sémantique et accessibilité',
     description:
       'Membre de l’équipe responsable de la conception visuelle, de la structure sémantique et de l’accessibilité.',
-    githubUsername: null,
+    githubUsername: 'isteahnfanfan-ux',
     photo: nikchelinePhoto,
     photoAlt: 'Portrait provisoire pour la fiche de Nikcheline FANFAN',
     isPlaceholder: true,
@@ -23,7 +23,7 @@ const teamMembers = [
     responsibility: 'Composants React et routage',
     description:
       'Membre de l’équipe responsable des composants graphiques réutilisables et de la navigation React.',
-    githubUsername: null,
+    githubUsername: 'olikwan-fullstacker',
     photo: endrickPhoto,
     photoAlt: 'Portrait provisoire pour la fiche de Endrick TESSIER',
     isPlaceholder: true,
@@ -35,19 +35,19 @@ const teamMembers = [
     responsibility: 'Context API et API GitHub',
     description:
       'Membre de l’équipe responsable des états globaux et de la récupération asynchrone des données GitHub.',
-    githubUsername: null,
+    githubUsername: 'Guivens509',
     photo: casimirPhoto,
     photoAlt: 'Portrait provisoire pour la fiche de Casimir GUIVENS',
     isPlaceholder: true,
   },
   {
     id: 'marc-laurin',
-    fullName: 'Marc LAURIN',
+    fullName: 'Jonathan Marc-Laurin FRANÇOIS',
     initials: 'ML',
     responsibility: 'Backend Express, qualité et déploiement',
     description:
       'Membre de l’équipe responsable du serveur Express, des contrôles de qualité et du déploiement.',
-    githubUsername: null,
+    githubUsername: 'Francois-M04',
     photo: marcPhoto,
     photoAlt: 'Portrait provisoire pour la fiche de Marc LAURIN',
     isPlaceholder: true,

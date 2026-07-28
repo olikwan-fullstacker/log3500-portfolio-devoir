@@ -3,9 +3,23 @@ import { useMemo, useState } from 'react';
 import ProjectCard from '../components/projects/ProjectCard.jsx';
 import ProjectFilter from '../components/projects/ProjectFilter.jsx';
 import projects from '../data/projects.js';
+import teamMembers from '../data/team.js';
+
+function getProjectOwnerName(project) {
+  if (project.scope === 'collective') {
+    return 'Équipe LOG3500';
+  }
+
+  const owner = teamMembers.find(
+    (member) => member.id === project.ownerId,
+  );
+
+  return owner?.fullName ?? 'Membre non identifié';
+}
 
 function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState('Tous');
+  const [activeMemberId, setActiveMemberId] = useState('all');
 
   const categories = useMemo(() => {
     const projectCategories = projects.map(
@@ -16,14 +30,22 @@ function ProjectsPage() {
   }, []);
 
   const filteredProjects = useMemo(() => {
-    if (activeCategory === 'Tous') {
-      return projects;
-    }
+    return projects.filter((project) => {
+      const matchesCategory =
+        activeCategory === 'Tous' ||
+        project.category === activeCategory;
 
-    return projects.filter(
-      (project) => project.category === activeCategory,
-    );
-  }, [activeCategory]);
+      const isContributor =
+        project.contributorIds?.includes(activeMemberId) ?? false;
+
+      const matchesMember =
+        activeMemberId === 'all' ||
+        project.ownerId === activeMemberId ||
+        isContributor;
+
+      return matchesCategory && matchesMember;
+    });
+  }, [activeCategory, activeMemberId]);
 
   return (
     <section
@@ -36,8 +58,9 @@ function ProjectsPage() {
         <h1 id="projects-page-title">Projets</h1>
 
         <p className="page-introduction">
-          Découvrez les projets réalisés individuellement et
-          collectivement par les membres de notre équipe.
+          Chaque membre présente ses propres réalisations. Les projets
+          développés par toute l’équipe sont identifiés comme projets
+          collectifs.
         </p>
       </header>
 
@@ -46,6 +69,28 @@ function ProjectsPage() {
         activeCategory={activeCategory}
         onCategoryChange={setActiveCategory}
       />
+
+      <div className="member-filter">
+        <label htmlFor="project-member-filter">
+          Afficher les projets de
+        </label>
+
+        <select
+          id="project-member-filter"
+          value={activeMemberId}
+          onChange={(event) =>
+            setActiveMemberId(event.target.value)
+          }
+        >
+          <option value="all">Tous les membres</option>
+
+          {teamMembers.map((member) => (
+            <option key={member.id} value={member.id}>
+              {member.fullName}
+            </option>
+          ))}
+        </select>
+      </div>
 
       <p className="project-results-count" aria-live="polite">
         {filteredProjects.length}{' '}
@@ -60,15 +105,17 @@ function ProjectsPage() {
             <ProjectCard
               key={project.id}
               project={project}
+              ownerName={getProjectOwnerName(project)}
             />
           ))}
         </div>
       ) : (
         <div className="empty-state">
           <h2>Aucun projet trouvé</h2>
+
           <p>
-            Aucun projet ne correspond actuellement à cette
-            catégorie.
+            Aucun projet ne correspond actuellement aux filtres
+            sélectionnés.
           </p>
         </div>
       )}

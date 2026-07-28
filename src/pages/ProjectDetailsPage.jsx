@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 
 import projects from '../data/projects.js';
+import teamMembers from '../data/team.js';
 
 function ProjectDetailsPage() {
   const { projectId } = useParams();
@@ -13,7 +14,9 @@ function ProjectDetailsPage() {
     return (
       <section className="page-section">
         <p className="page-eyebrow">Erreur</p>
+
         <h1>Projet introuvable</h1>
+
         <p>
           Aucun projet ne correspond à l’identifiant demandé.
         </p>
@@ -25,6 +28,15 @@ function ProjectDetailsPage() {
     );
   }
 
+  const owner = teamMembers.find(
+    (member) => member.id === project.ownerId,
+  );
+
+  const projectAuthor =
+    project.scope === 'collective'
+      ? 'Équipe LOG3500'
+      : owner?.fullName ?? 'Membre non identifié';
+
   const {
     title,
     category,
@@ -34,6 +46,7 @@ function ProjectDetailsPage() {
     repositoryUrl,
     demoUrl,
     isPlaceholder,
+    scope,
   } = project;
 
   return (
@@ -47,14 +60,25 @@ function ProjectDetailsPage() {
 
         <h1>{title}</h1>
 
+        <p className="project-details-author">
+          Réalisé par : <strong>{projectAuthor}</strong>
+        </p>
+
         <p className="project-details-status">
           Statut : <strong>{status}</strong>
         </p>
 
+        {scope === 'collective' && (
+          <p>
+            Ce projet a été réalisé conjointement par les quatre
+            membres de l’équipe.
+          </p>
+        )}
+
         {isPlaceholder && (
           <p className="project-warning">
             Cette présentation est provisoire et doit être
-            remplacée par le contenu réel du devoir.
+            remplacée par le contenu réel du projet.
           </p>
         )}
       </header>

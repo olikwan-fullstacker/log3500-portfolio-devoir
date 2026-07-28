@@ -896,3 +896,39 @@ select:focus-visible {
     flex-direction: column;
   }
 }
+.member-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.member-filter label {
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.member-filter select {
+  min-height: 44px;
+  padding: 0.55rem 2.5rem 0.55rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+
+  color: var(--color-text);
+  background-color: var(--color-surface);
+
+  cursor: pointer;
+}
+
+.member-filter select:focus {
+  border-color: var(--color-primary);
+}
+
+.project-owner {
+  margin-bottom: var(--space-2);
+
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}

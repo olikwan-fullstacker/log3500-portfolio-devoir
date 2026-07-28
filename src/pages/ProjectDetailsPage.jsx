@@ -4,7 +4,7 @@ function ProjectDetailsPage() {
   const { projectId } = useParams();
 
   return (
-    <section>
+    <section className="page-section">
       <h1>Détail du projet</h1>
       <p>Identifiant provisoire du projet : {projectId}</p>
     </section>
